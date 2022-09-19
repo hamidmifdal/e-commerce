@@ -1,0 +1,27 @@
+{% extends 'layout/base.html' %}
+{% block body %}
+    <div class="container">
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-5 justify-content-center text-center">
+              {% for i in product %}
+                <div class="col">
+                  
+                  <div class="card">
+                    <img src="{{ url_for('static', filename='img/'+ i.filename) }}" class="card-img-top">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ i.title }}</h5>
+                      <p class="card-text">{{ i.description }}</p>
+                      <form action="{{ request.path }}" method="post">
+                        <a href="/buy/{{i.id}}/{{i.title}}/{{i.prix}}/{{i.description}}/{{i.filename}}" role="button" class="btn btn-dark">{{ i.prix }}</a>
+                      </form>
+                    </div>
+                  </div>
+                  
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            </section>
+    </div>
+{% endblock %}

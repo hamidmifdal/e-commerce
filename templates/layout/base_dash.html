@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <link href ="{{ url_for('static',filename='cs/bootstrap.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static',filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <title>Dashbord</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand navbar-light bg-white">
+        <div class="container">
+          <a class="navbar-brand fs-1 text-warning" href="#">Dashbord <span class="fs-6 text-dark">.Store</span> </a>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-items"><a class="nav-link active fs-4 me-5 ms-0 btn btn-outline-warning" href="/admin/dash">Dash</a></li>
+            <li class="nav-items"><a class="nav-link active fs-4 me-0 ms-5 btn btn-outline-warning" href="/">MyStore</a></li>
+          </ul>
+      </nav>
+     <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Add new Products shop</h1>
+                <p class="lead fw-normal text-white-50 mb-0">welcome to dashbord!</p>
+            </div>
+        </div>
+    </header>
+      <div class="container">
+        {% block body %}
+        {% endblock %}
+      </div>
+  </body>
+</html>

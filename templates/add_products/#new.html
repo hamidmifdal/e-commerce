@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap502.css') }}">
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    </head>
+   <body>
+   
+      <h3>Students - Flask SQLAlchemy example</h3>
+      <hr/>
+      
+      {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {%- endfor %}
+      <div class="container">
+        <center>
+          <form action="" method="post" enctype="multipart/form-data">
+
+          <label for="inputEmail4" class="form-label">Title</label>
+          <input name="title" class="form-control w-50" id="inputEmail4">
+
+          <label for="inputEmail4" class="form-label mt-3">Description</label>
+          <input name="description" class="form-control w-50" id="inputEmail4">
+
+          <label for="inputEmail4" class="form-label mt-3">Prix</label>
+          <input name="prix" class="form-control w-50" id="inputEmail4">
+
+          <label for="inputEmail4" class="form-label mt-3">image</label>
+          <input name="file" type="file" class="form-control w-50" id="inputEmail4" >
+
+          <button type="submit" class="btn btn-info mt-4">Add to Products</button>
+        </form>
+        </center>
+      </div>
+   </body>
+</html>

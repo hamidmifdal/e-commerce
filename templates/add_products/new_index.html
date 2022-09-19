@@ -1,0 +1,48 @@
+{% extends 'layout/base_dash.html' %}
+{% block body %}
+    <div class="container">
+        <center class="h-100 py-5">
+          <p class="fs-1 btn btn-outline-dark w-25 mb-5">Tshirt</p>
+            <form class="mt-5" action="{{ request.path }}" method="post" enctype="multipart/form-data">
+
+                <label for="inputEmail4" class="form-label">Title</label>
+                <input name="title" class="form-control w-50" id="inputEmail4">
+      
+                <label for="inputEmail4" class="form-label mt-3">Description</label>
+                <input name="description" class="form-control w-50" id="inputEmail4">
+      
+                <label for="inputEmail4" class="form-label mt-3">Prix</label>
+                <input name="prix" class="form-control w-50" id="inputEmail4">
+      
+                <label for="inputEmail4" class="form-label mt-3">image</label>
+                <input name="file" type="file" class="form-control w-50" id="inputEmail4" >
+      
+                <button type="submit" class="btn btn-info mt-4">Add to Products</button>
+            </form>
+        </center>
+        <center>
+            <table class="table w-50">
+                <thead>
+                  <tr>
+                    <th scope="col">#id</th>
+                    <th scope="col">title</th>
+                    <th scope="col">prix</th>
+                    <th scope="col">actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for i in products %}
+                  <tr>
+                    <th scope="row">{{ i.id }}</th>
+                    <td>{{ i.title }}</td>
+                    <td>{{ i.prix }}</td> 
+                    <form action="/delete/Pt/{{ i.id }}" method="post">
+                      <td> <input type="submit" value="delete" class="btn btn-outline-danger"> </td>
+                    </form>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        </center>
+    </div>
+{% endblock %}

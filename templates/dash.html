@@ -1,0 +1,45 @@
+{% extends 'layout/base_dash.html' %}
+{% block body %}
+<!-- dash admin -->
+<div class="container">
+    <div class="h-50 mt-5">
+    <div class="row row-cols-3 text-center align-items-center justify-content-start">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title">add new_tshirt</p>
+                    <p class="card-text">
+                        <p class="text-start">create Products tshirt</p> 
+                        <a role="button" class="btn btn-warning" href="/admin/dash/new_tshirt">new</a>  
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title">add new_totebag</p>
+                    <p class="card-text">
+                        <p class="text-start">create Products totebag</p> 
+                        <a role="button" class="card-text btn btn-warning" href="/admin/dash/new_totebag">new</a>  
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title">add new_personelprinting</p>
+                    <p class="card-text">
+                        <p class="text-start">create Products personelprinting</p> 
+                        <a role="button" class="btn btn-warning" href="/admin/dash/new_pp">new</a>  
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
